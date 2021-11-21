@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, jsonify, Response, url_for, redirect
 from flask_cors import CORS, cross_origin
-
+import os
+from wsgiref import simple_server
 from logger_class import Logger
 import Constants
+
 from NltkPro import NltkProcessing
 
 app = Flask(__name__)  # initialising the flask app with the name 'app'
@@ -37,9 +39,14 @@ def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
-
+port = int(os.getenv("PORT", 5001))
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    app.run()
+    #app.run()
+    host = '0.0.0.0'
+    httpd = simple_server.make_server(host=host, port=port, app=app)
+    # httpd = simple_server.make_server(host='127.0.0.1', port=5000, app=app)
+    # print("Serving on %s %d" % (host, port))
+    httpd.serve_forever()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
