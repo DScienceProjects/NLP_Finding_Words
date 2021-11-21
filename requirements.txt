@@ -3,3 +3,4 @@ Flask-Cors==3.0.9
 pandas
 gunicorn
 nltk
+pytest==6.2.2
