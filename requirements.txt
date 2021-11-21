@@ -1,0 +1,5 @@
+Flask
+Flask-Cors==3.0.9
+pandas
+gunicorn
+nltk
