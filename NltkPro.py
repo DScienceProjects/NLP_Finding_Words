@@ -2,6 +2,7 @@ import nltk
 nltk.download('punkt')
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
+nltk.download('stopwords')
 from nltk.stem import WordNetLemmatizer
 import re
 from logger_class import Logger
