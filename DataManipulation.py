@@ -34,9 +34,15 @@ class DataManipulation:
 
                 nlt = NltkProcessing()
                 l = []
+
                 for data in df['Description']:
                     result = nlt.process(data)
-                    l.append(result)
+                    res = ""
+                    for j in result:
+                        res = res + j + " "
+                    print(res)
+                    l.append(res)
+
                 df['Result'] = l
                 return df
 
