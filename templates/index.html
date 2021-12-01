@@ -1,15 +1,15 @@
 {% block head %}
 
-<title>Calculator</title>
+<title>ML-NLP</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">Clever tap event mapping to csv</h1>
+    <h1 style="text-align: center">NLP Store Search Solution</h1>
 
     <div class="form">
-        <form action = "http://localhost:5000/uploader" method = "POST"
+        <form action = "/uploader" method = "POST"
          enctype = "multipart/form-data">
          <input type = "file" name = "file" />
          <input type = "submit"/>
